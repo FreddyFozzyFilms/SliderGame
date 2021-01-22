@@ -21,12 +21,14 @@ public class Slider extends JFrame implements ActionListener{
     private final int SCRAMBLE;
     private final int RIGHT_MARGIN = 10;
     private final String EMPTY_TEXT = "";
-    
+   
     private JButton[][] btns;
     private JPanel gameboard, menu, menuBottom;
     
     private JLabel movesUI;
     private int moves = 0;
+    
+    private JLabel scoreUI;
     
     private JButton[][] intialState;
     
@@ -60,12 +62,16 @@ public class Slider extends JFrame implements ActionListener{
         
         menu = new JPanel();
         menu.setBackground(Color.WHITE);
+        menu.setLayout(new FlowLayout(FlowLayout.CENTER, 60, 10));
         
         movesUI = new JLabel("Moves: 0");
         movesUI.setFont(f);
         
-        menu.add(movesUI);
+        scoreUI = new JLabel("Score: 0");
+        scoreUI.setFont(f);
         
+        menu.add(movesUI);
+        menu.add(scoreUI);
         
         menuBottom = new JPanel();
         menuBottom.setBackground(Color.WHITE);
@@ -138,14 +144,14 @@ public class Slider extends JFrame implements ActionListener{
             for (int j = 0; j < SIZE; j++){
                 if (e.getSource() == btns[emptyI][j] && e.getSource() != btns[emptyI][emptyJ]){
                     moveRow(j);
-                    updateScore();
+                    updateStats();
                 }
             }
             // all buttons which share the same j coordinate as Empty
             for (int i = 0; i < SIZE; i++) {
                 if (e.getSource() == btns[i][emptyJ] && e.getSource() != btns[emptyI][emptyJ]){
                     moveColumn(i);
-                    updateScore();
+                    updateStats();
                 }
             }
         }
@@ -247,9 +253,16 @@ public class Slider extends JFrame implements ActionListener{
         
     }
     
-    private void updateScore(){
+    private void updateStats(){
         moves++;
         movesUI.setText("Moves: " + Integer.toString(moves));
+        
+        scoreUI.setText("Score: " + computeScore());
+    }
+    
+    private int computeScore(){
+        // TODO: (SIZE^2)! - moves + SCRAMBLE
+        return SIZE * SIZE + SCRAMBLE - moves;
     }
     
 }
