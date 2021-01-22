@@ -83,7 +83,7 @@ public class Settings extends JFrame implements ActionListener{
             int size = Integer.parseInt(sizeField.getText());
             int scramble = Integer.parseInt(scrambleField.getText());
             
-            if (0 < size && size < 10 && scramble > 0){
+            if (1 < size && size < 10 && 0 < scramble && scramble < 100000){
                 new Slider(size, scramble);
                 this.dispose();
             }
