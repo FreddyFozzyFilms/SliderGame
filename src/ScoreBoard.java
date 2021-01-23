@@ -90,13 +90,14 @@ public class ScoreBoard extends JFrame implements ActionListener {
 
             int i = 0;
             while (scoreLine != null && i < 5) {
-                if (i != 0)
+                if (i != 0){
+                    int comma = scoreLine.lastIndexOf(",");
+                    scoreLine = scoreLine.substring(0, comma) + ": " + scoreLine.substring(comma + 1);
+                    
                     text += scoreLine + "<br>";
+                }
                 
                 scoreLine = br.readLine();
-                
-                int comma = scoreLine.lastIndexOf(",");
-                scoreLine = scoreLine.substring(0, comma) + ": " + scoreLine.substring(comma + 1);
 
                 i++;
             }
