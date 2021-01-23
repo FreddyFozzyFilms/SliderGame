@@ -76,7 +76,8 @@ public class Settings extends JFrame implements ActionListener{
         setResizable(false);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
-
+    
+    // instance methodes
     @Override
     public void actionPerformed(ActionEvent e) {
         try{

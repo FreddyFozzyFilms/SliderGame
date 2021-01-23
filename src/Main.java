@@ -15,7 +15,7 @@ public class Main {
      */
     public static void main(String[] args) {
         // TODO code application logic here
-        new Slider(3, 100);
+        new Slider(3, 1000);
     }
     
 }
