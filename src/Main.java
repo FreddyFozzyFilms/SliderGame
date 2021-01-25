@@ -14,8 +14,22 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
-        new Slider(3, 1000);
+        int[][] targetBoard = {
+            {1, 2, 3},
+            {4, 5, 6},
+            {7, 8, 9}};
+        
+        int[][] rootBoard = {
+            {4, 6, 7},
+            {5, 9, 3},
+            {1, 2, 8}};
+        
+        Node target = new Node(targetBoard);
+        Node root = new Node(rootBoard);
+        
+        System.out.println(Search.bfs(target, root));
+        //new Slider(3, 100);
+        
     }
     
 }
