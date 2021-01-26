@@ -21,7 +21,7 @@ public class Node {
     private int emptyI;
     private int emptyJ;
 
-    // contructor
+    // constructor
     public Node(int[][] b) {
         BOARD = cloneArray(b);
         SIZE = BOARD.length;

@@ -161,7 +161,8 @@ public class Slider extends JFrame implements ActionListener {
 
         newGame();
     }
-
+    
+    // instance methodes
     @Override
     public void actionPerformed(ActionEvent e) {
         // lame version

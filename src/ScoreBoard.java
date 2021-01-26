@@ -69,7 +69,8 @@ public class ScoreBoard extends JFrame implements ActionListener {
 
         displayHighScores();
     }
-
+    
+    // instance methodes
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == saveScore) {
