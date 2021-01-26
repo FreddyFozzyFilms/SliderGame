@@ -1,5 +1,3 @@
-4
-Pigu,979
-dil,,959
-Dumbass,933
-Human being,878
+2
+Frederick Pu,42
+Johnny,-42

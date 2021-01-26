@@ -87,7 +87,7 @@ public class Node {
         String out = "";
         for (int i = 0; i < SIZE; i++){
             for (int j = 0; j < SIZE; j++){
-                out += BOARD[i][j];
+                out += BOARD[i][j] + ",";
             }
             out += "\n";
         }

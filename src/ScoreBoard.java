@@ -86,7 +86,7 @@ public class ScoreBoard extends JFrame implements ActionListener {
            
             String scoreLine = br.readLine();
             
-            String text = "<html>";
+            String text = "<html>Top 5 scores:<br>";
 
             int i = 0;
             while (scoreLine != null && i < 5) {
